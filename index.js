@@ -243,6 +243,15 @@ function printKnockoutStageResults(quarterFinals, semiFinals, bronzeMatch, final
     finalMatch.forEach((match) => {
         console.log(`    Finale: ${match.team1} - ${match.team2} (${match.team1Score}:${match.team2Score})`);
     });
+
+    const firstPlace = finalMatch[0].team1Score > finalMatch[0].team2Score ? finalMatch[0].team1 : finalMatch[0].team2;
+    const secondPlace = finalMatch[0].team1Score > finalMatch[0].team2Score ? finalMatch[0].team2 : finalMatch[0].team1;
+    const thirdPlace = bronzeMatch[0].team1Score > bronzeMatch[0].team2Score ? bronzeMatch[0].team1 : bronzeMatch[0].team2;
+
+    console.log('\nMedalje:');
+    console.log(`1.: ${firstPlace}`);
+    console.log(`2.: ${secondPlace}`);
+    console.log(`3.: ${thirdPlace}`);
 }
 
 
